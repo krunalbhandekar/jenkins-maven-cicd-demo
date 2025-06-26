@@ -186,6 +186,10 @@ sudo apt install tree
 ```
 
 ```bash
+cd /var/lib/jenkins/workspace/build-calculator-manual
+```
+
+```bash
 tree
 ```
 
@@ -257,6 +261,10 @@ ls /var/lib/jenkins/workspace/build-calculator-pipeline/target
 
 ```bash
 sudo apt install tree
+```
+
+```bash
+cd /var/lib/jenkins/workspace/build-calculator-pipeline
 ```
 
 ```bash
