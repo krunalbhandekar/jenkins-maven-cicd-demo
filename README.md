@@ -90,6 +90,61 @@ Java version: 17 (or whatever is installed)
 
 ---
 
+## ⚙️ Switch Java Version on Jenkins Server (System-Wide)
+
+If your **project requires Java 17**, but **Jenkins is using Java 21** (or any other version), you can manually switch the default Java version using the following command:
+
+### ✅ Use the following command:
+
+```bash
+sudo update-alternatives --config java
+```
+
+### 🧾 Output Example:
+
+```bash
+There are 2 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                            Priority   Status
+------------------------------------------------------------
+* 0            /usr/lib/jvm/java-21-openjdk-amd64/bin/java     1211      auto mode
+  1            /usr/lib/jvm/java-17-openjdk-amd64/bin/java     1111      manual mode
+  2            /usr/lib/jvm/java-21-openjdk-amd64/bin/java     1211      manual mode
+
+Press enter to keep the current choice[*], or type selection number:
+```
+
+### ⌨️ What to Do:
+
+- Enter the number (e.g., `1`) for Java 17 to switch.
+- This will make Java 17 the **default Java version for all users**, including Jenkins.
+
+### 🧪 To Verify the Current Java Version
+
+```bash
+java -version
+```
+
+Expected:
+
+```bash
+openjdk version "21.0.x" ...
+```
+
+### 💡 Tip: Don’t Want to Change Global Java?
+
+If you don’t want to change Java system-wide, you can **override it in Jenkins job** using:
+
+**Freestyle Job → Execute Shell Step:**
+
+```bash
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+/opt/maven/bin/mvn clean package
+```
+
+---
+
 ## 🛠️ Step-by-Step: Run mvn clean package in Jenkins
 
 ### ✅ Option 1: Freestyle Project
