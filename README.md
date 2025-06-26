@@ -179,6 +179,33 @@ After successful build: `.jar` will be generated in `target/`
 ls /var/lib/jenkins/workspace/build-calculator-manual/target
 ```
 
+**📂 Test Folder Structure with `tree` Command**
+
+```bash
+sudo apt install tree
+```
+
+```bash
+tree
+```
+
+Expected:
+
+```pgsql
+├── pom.xml
+├── src
+│   └── main
+│       └── java
+│           └── com
+│               └── example
+│                   └── Calculator.java
+└── target
+    ├── classes
+    ├── generated-sources
+    ├── maven-status
+    └── SimpleCalculator-1.0-SNAPSHOT.jar
+```
+
 ---
 
 ### ✅ Option 2: Pipeline Job (Jenkinsfile)
@@ -224,6 +251,33 @@ After successful build: `.jar` will be generated in `target/`
 
 ```bash
 ls /var/lib/jenkins/workspace/build-calculator-pipeline/target
+```
+
+**📂 Test Folder Structure with `tree` Command**
+
+```bash
+sudo apt install tree
+```
+
+```bash
+tree
+```
+
+Expected:
+
+```pgsql
+├── pom.xml
+├── src
+│   └── main
+│       └── java
+│           └── com
+│               └── example
+│                   └── Calculator.java
+└── target
+    ├── classes
+    ├── generated-sources
+    ├── maven-status
+    └── SimpleCalculator-1.0-SNAPSHOT.jar
 ```
 
 ---
